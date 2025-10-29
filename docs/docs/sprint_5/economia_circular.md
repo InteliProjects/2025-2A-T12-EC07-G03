@@ -1,0 +1,50 @@
+---
+title: Economia Circular
+sidebar_label: Economia Circular
+sidebar_position: 5
+---
+
+# ECONOMIA CIRCULAR
+
+O objetivo desta seção é entender e documentar o ciclo de produção da Itubombas, seus pontos críticos e identificar onde nosso produto se encaixa nesse processo. No infográfico a seguir, você encontrará um levantamento dos requisitos de visualização para o projeto, uma exploração dos materiais, recursos, processos e impactos (sociais e ambientais) envolvidos na atividade-fim do parceiro, além de uma análise do ciclo atual de produção.
+
+Segue o link:
+https://www.canva.com/design/DAG0F6BxgqU/gPnsS3tfTp4vrGcgikEfXw/edit?utm_content=DAG0F6BxgqU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+## Levantamento de Requisitos de Visualização
+
+O desenvolvimento dos infográficos teve como finalidade representar os requisitos de visualização definidos para o projeto, consolidando as decisões tomadas sobre como os dados do sistema seriam exibidos e acessados. Buscou-se estruturar um conjunto de telas capaz de oferecer uma visão ampla do funcionamento das motobombas, acompanhada de indicadores críticos e previsões de falha. Assim, o painel principal (dashboard) foi concebido para concentrar as informações essenciais, exibindo o status operacional de todas as bombas, os alertas ativos e as próximas manutenções, além de gráficos de tendência e cartões com dados de telemetria em tempo real.
+
+Complementando essa visão geral, foram definidos layouts específicos para a visualização detalhada de cada bomba, permitindo acompanhar variáveis técnicas como pressão, vibração, temperatura e índices de saúde dos subsistemas hidráulico e de lubrificação. Essa estrutura visa garantir tanto a clareza na leitura dos dados quanto a agilidade na identificação de possíveis anomalias, preservando a coerência entre o nível macro e o nível individual de análise.
+
+Outro requisito considerado foi a integração dos modelos preditivos ao ambiente visual. Na tela há elementos que permitem acompanhar previsões, visualizar métricas de desempenho e consultar logs de treinamento, assegurando transparência e controle sobre o funcionamento dos modelos de machine learning. Essa integração reforça a proposta de uma plataforma que não apenas monitora, mas também antecipa comportamentos e falhas.
+
+Como não temos diferenciação de nível de acessos a informação de nossos usuários isso não foi um desafio que tivemos que enfrentar. Claro, mantemos a atenção para construção de um sistema de autenticação para estes usuários.
+
+## Levantamento de matérias-primas, recursos, processos e impactos (sociais e ambientais)
+
+O levantamento de matérias-primas, recursos, processos e impactos teve como objetivo mapear o ciclo de vida completo das motobombas utilizadas pelo parceiro, identificando os principais elementos envolvidos desde a fabricação até o descarte final. Esse mapeamento permite compreender as dependências materiais e operacionais do negócio, além de evidenciar os pontos críticos de consumo de recursos e geração de impactos socioambientais.
+
+No que se refere às matérias-primas e componentes, foram identificados os materiais estruturais que compõem as motobombas: metais como ferro fundido, aço carbono, aço inoxidável e ligas especiais utilizados no corpo e carcaça; ligas resistentes à cavitação e abrasão empregadas nos impeleres (rotores); motores elétricos contendo cobre e isolantes, além de motores diesel com blocos metálicos e sistemas de combustível; e acessórios de locação, incluindo mangueiras, conexões, filtros, tanques de combustível, chassis e painéis de controle.
+
+Quanto aos recursos consumidos ao longo da operação, destacam-se o combustível fóssil (diesel), principal fonte de emissões diretas de CO₂, NOx e material particulado, além de gerar custos operacionais elevados; a energia elétrica, utilizada na operação de bombas elétricas, oficinas e sistemas de telemetria; a água, empregada em testes, lavagem e eventualmente nas próprias operações de bombeamento; as peças de reposição e consumíveis, como selos, filtros e rolamentos, que demandam descarte e reposição frequentes na frota de locação; o transporte e logística, responsável pelo deslocamento de equipamentos com alto consumo de diesel e necessidade de viagens técnicas; e a mão de obra qualificada, composta por técnicos de manutenção, motoristas e operadores.
+
+Em relação aos processos operacionais, o ciclo se inicia com a logística de recebimento do pedido e dimensionamento, etapa em que se seleciona o equipamento adequado conforme vazão, altura e presença de sólidos. Segue-se a mobilização, com transporte e carregamento até o local do cliente, e a supervisão no local, envolvendo telemetria e intervenções técnicas. Posteriormente, há o retorno, limpeza e recondicionamento, com descontaminação, reparos e documentação. Por fim, ocorre o fim de vida e descarte, no qual sucata metálica, filtros e óleo usado são removidos e destinados conforme a legislação vigente.
+
+Por fim, os impactos socioambientais identificados abrangem tanto riscos ocupacionais quanto efeitos ambientais. Entre os riscos ocupacionais imediatos, destacam-se acidentes em transporte e instalação. Quanto aos impactos ambientais, as emissões atmosféricas provenientes da queima de diesel em unidades móveis geram CO₂, NOx e material particulado. Há também o risco de contaminação por óleos e combustíveis, com derramamentos durante abastecimento e manutenção que podem contaminar solo e água. Adicionalmente, o impacto decorrente do uso de água pela bomba depende fortemente do cliente que está pagando pelo serviço, podendo variar conforme a aplicação e volume bombeado.
+
+## Ciclo de produção 
+
+A elaboração do infográfico interativo teve como propósito representar visualmente o ciclo produtivo completo das motobombas, evidenciando tanto o fluxo principal de operações quanto os pontos críticos que podem comprometer a eficiência e a continuidade do serviço. Essa representação permite compreender a interdependência entre as etapas do processo e identificar onde residem os maiores riscos operacionais, subsidiando decisões estratégicas de manutenção e gestão da frota.
+
+O ciclo produtivo principal foi estruturado em cinco etapas sequenciais. Inicia-se com o recebimento do pedido, no qual ocorre o estudo técnico da aplicação do cliente, definindo-se os parâmetros de vazão, altura e tipo de fluído, resultando na escolha da bomba mais adequada. Em seguida, ocorre o transporte e mobilização, fase em que o equipamento é preparado e transportado até o local de uso, envolvendo carregamento, deslocamento e montagem no cliente, normalmente com o uso de veículos a diesel. A terceira etapa é a operação no local, durante a qual a bomba é monitorada presencialmente ou por sistemas de telemetria, consumindo energia elétrica ou combustível e, eventualmente, água para testes, exigindo acompanhamento constante para evitar vazamentos, superaquecimento e falhas mecânicas. Após o término do serviço, o equipamento passa pelo recondicionamento, retornando à base para limpeza e inspeção caso surja algum erro, com reparos, substituição de peças e descarte de resíduos como filtros e óleos usados. Por fim, quando a bomba atinge o fim de vida útil, seus componentes metálicos são enviados para reciclagem ou remodelado, e os resíduos perigosos, como lubrificantes, têm destinação controlada, garantindo uma gestão adequada que evita contaminações e contribui para o reaproveitamento de materiais.
+
+Complementando essa visão do ciclo, foram identificados os principais pontos de fragilidade e risco ao longo do processo. O recondicionamento foi destacado como o principal ponto crítico, apresentando duas dimensões de fragilidade. A primeira diz respeito à manutenção corretiva não planejada, situação em que a Itubombas é forçada a uma posição de reatividade em vez de proatividade, o que aumenta a chance de problemas logísticos surgirem, como falta de peças, atrasos nos reparos e indisponibilidade de equipamentos na frota. A segunda dimensão relaciona-se à demora para atendimento, decorrente do tempo de conserto e, principalmente, do tempo de viagem até o mecânico chegar no local, o que gera insatisfação no cliente e compromete a qualidade do serviço prestado. Esses gargalos evidenciam a necessidade de implementar estratégias de manutenção preditiva, otimizar a logística de campo e reduzir os tempos de resposta, garantindo maior previsibilidade e confiabilidade nas operações.
+
+## Conclusão
+
+A análise detalhada do ciclo produtivo da Itubombas, desde o levantamento de matérias-primas até a identificação dos pontos críticos de fragilidade, evidencia a complexidade operacional do negócio de locação de motobombas e reforça a relevância estratégica da solução proposta. O mapeamento realizado demonstra que os principais desafios enfrentados pela empresa concentram-se na fase de recondicionamento, onde a manutenção corretiva não planejada e os longos tempos de resposta geram impactos significativos tanto na disponibilidade da frota quanto na satisfação dos clientes.
+
+Nesse contexto, o sistema de telemetria e manutenção preditiva desenvolvido posiciona-se como uma solução direta aos gargalos identificados, permitindo a transição de um modelo reativo para um modelo proativo de gestão da frota. Ao antecipar falhas e otimizar o planejamento de manutenções, a plataforma contribui não apenas para a redução de custos operacionais e aumento da vida útil dos equipamentos, mas também para a minimização de impactos socioambientais associados ao consumo excessivo de recursos, emissões atmosféricas e geração de resíduos.
+
+Além disso, os requisitos de visualização estabelecidos garantem que as informações críticas sejam apresentadas de forma clara e acessível, facilitando a tomada de decisões estratégicas em tempo real. A integração entre monitoramento contínuo, análise preditiva e gestão visual consolida uma abordagem sistêmica que fortalece a competitividade da Itubombas e promove uma operação mais sustentável e eficiente, alinhada aos princípios da economia circular e da gestão inteligente de ativos.

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  data-processor:
+    build: .
+    container_name: data-processor
+    restart: unless-stopped
+    network_mode: host  # Permite acesso direto às portas do host
+    volumes:
+      - ./data:/app/data
+      - ./logs:/var/log/app

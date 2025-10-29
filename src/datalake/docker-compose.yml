@@ -1,0 +1,88 @@
+version: "3.9"
+
+services:
+
+  # PostgreSQL - Backend para persistência do Nessie
+  postgres:
+    image: postgres:14
+    container_name: nessie_postgres
+    environment:
+      POSTGRES_USER: nessie
+      POSTGRES_PASSWORD: nessie
+      POSTGRES_DB: nessie
+    ports:
+      - "5433:5432"  # Porta externa 5433 para evitar conflito
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nessie"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Nessie - Catalog para Iceberg com backend PostgreSQL
+  nessie:
+    image: projectnessie/nessie
+    container_name: nessie
+    ports:
+      - "19120:19120"
+    environment:
+      # Configuração do banco PostgreSQL
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://postgres:5432/nessie
+      QUARKUS_DATASOURCE_USERNAME: nessie
+      QUARKUS_DATASOURCE_PASSWORD: nessie
+      QUARKUS_DATASOURCE_DB_KIND: postgresql
+      # Configurações adicionais do Nessie
+      NESSIE_VERSION_STORE_TYPE: JDBC
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      # Volume para logs e configs opcionais
+      - ./nessie_logs:/var/nessie/logs
+
+  # MinIO - Object Storage (S3-compatible)
+  minioserver:
+    image: minio/minio
+    container_name: minioserver
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      # Persistência dos objetos
+      - ./minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # Dremio - Query Engine
+  dremio:
+    platform: linux/x86_64
+    image: dremio/dremio-oss:latest
+    container_name: dremio
+    ports:
+      - "9047:9047"
+      - "31010:31010"
+      - "32010:32010"
+    volumes:
+      - ./dremio_data:/opt/dremio/data
+      - ./dremio_conf:/opt/dremio/conf
+    user: "0:0"
+    depends_on:
+      - nessie
+      - minioserver
+    environment:
+      # Configurações opcionais do Dremio
+      DREMIO_MAX_HEAP_MEMORY_SIZE_MB: 4096
+      DREMIO_MAX_DIRECT_MEMORY_SIZE_MB: 2048
+
+networks:
+  default:
+    name: iceberg_env
+    driver: bridge

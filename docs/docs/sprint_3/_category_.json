@@ -1,0 +1,8 @@
+{
+    "label": "Sprint 3",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "Durante a Sprint 3, foi desenvolvido e implementado um datalake para armazenar dados provenientes do broker. Além disso, foi feita uma análise financeira de requisitos não-funcionais, bem como o estudo e aplicação de outros modelos"
+    }
+}
